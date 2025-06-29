@@ -494,6 +494,15 @@
             text-align: center;
         }
 
+        .contact .section-title h2 {
+            color: var(--white);
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -524,10 +533,149 @@
             opacity: 0.8;
         }
 
+        /* Blog Section */
+        .blog-list {
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 1.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 1.5rem;
+        }
+
+        .blog-item {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem 1.2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            border-left: 5px solid var(--primary);
+            flex: 0 0 auto;
+            width: 320px;
+            min-width: 260px;
+            max-width: 90vw;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-tag {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .blog-title {
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            margin-top: 0.2rem;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .blog-title:hover {
+            text-decoration: underline;
+        }
+
+        .blog-desc {
+            color: #555;
+            font-size: 0.97rem;
+            margin-bottom: 0;
+            margin-top: 0.2rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .blog-item {
+                width: 80vw;
+                min-width: 220px;
+                padding: 1.2rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-list {
+                gap: 1.2rem;
+                padding-bottom: 1rem;
+            }
+            .blog-item {
+                width: 92vw;
+                min-width: 170px;
+                padding: 1rem 0.5rem;
+            }
+            .blog-title, .blog-desc, .blog-tags {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                min-width: 0;
+                z-index: 1000;
+                background: rgba(255,255,255,0.98);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+                padding: 0.7rem 0;
+            }
+            .nav-container {
+                padding: 0 0.5rem;
+                min-width: 0;
+                width: 100vw;
+            }
+            .logo {
+                font-size: 1.25rem;
+                padding: 0.3rem 0;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
             .nav-links {
                 display: none;
+                flex-direction: column;
+                background: rgba(255,255,255,0.98);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100vw;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+                padding: 1rem 0;
+                z-index: 1001;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: var(--primary);
+                cursor: pointer;
+                margin-left: 1rem;
+                z-index: 1002;
             }
 
             .hero-content {
@@ -535,82 +683,77 @@
                 text-align: center;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .hero-visual {
+                justify-content: center;
+                align-items: flex-start;
+                margin-top: 2rem;
             }
 
             .floating-cards {
-                width: 300px;
-                height: 300px;
+                width: 100%;
+                max-width: 340px;
+                min-width: 0;
+                height: auto;
+                min-height: 0;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 1rem;
+                position: static;
             }
 
+            .floating-card {
+                position: static;
+                width: 150px;
+                min-width: 120px;
+                margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+                animation: none;
+                flex: 1 1 120px;
+                box-sizing: border-box;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .experience-timeline {
+                margin-top: 2rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
             .experience-timeline::before {
                 left: 0;
+                right: auto;
+                width: 3px;
+                background: var(--gradient);
+                margin-left: 0;
+                transform: none;
             }
-
+            .experience-item {
+                margin-bottom: 2rem;
+            }
             .experience-content {
-                width: calc(100% - 2rem);
-                margin-left: 2rem !important;
+                width: 100%;
+                margin: 0 !important;
+                box-sizing: border-box;
+                padding: 1.2rem 1rem;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+                position: relative;
+                left: 0;
             }
-
             .experience-icon {
                 left: 0;
                 transform: translateX(-50%);
-            }
-
-            .edu-cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
+                top: -30px;
+                margin-bottom: 0.5rem;
+                position: absolute;
             }
         }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (min-width: 769px) {
+            .nav-toggle {
+                display: none;
             }
-        }
-
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -619,9 +762,13 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">Mihir Patel</div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -749,6 +896,73 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Blog</h2>
+                <p>Read my latest technical articles and tutorials</p>
+            </div>
+            <div class="blog-list">
+                <!-- New blog 1 -->
+                <div class="blog-item">
+                    <div class="blog-tags">
+                        <span class="blog-tag">Docker</span>
+                        <span class="blog-tag">Development</span>
+                        <span class="blog-tag">DevOps</span>
+                    </div>
+                    <a href="https://medium.com/simform-engineering/setting-up-a-local-development-environment-using-docker-compose-551efb4ec0ee" target="_blank" class="blog-title">
+                        Setting Up a Local Development Environment Using Docker Compose
+                    </a>
+                    <div class="blog-desc">
+                        Learn how to quickly set up a robust local development environment with Docker Compose.
+                    </div>
+                </div>
+                <!-- New blog 2 -->
+                <div class="blog-item">
+                    <div class="blog-tags">
+                        <span class="blog-tag">Networking</span>
+                        <span class="blog-tag">Linux</span>
+                        <span class="blog-tag">DevOps</span>
+                    </div>
+                    <a href="https://mihirpost.medium.com/creating-a-network-topology-setup-in-such-a-way-so-that-system-a-can-ping-to-two-systems-system-b-6f5c1d87a59b" target="_blank" class="blog-title">
+                        Creating a Network Topology Setup for System Communication
+                    </a>
+                    <div class="blog-desc">
+                        Step-by-step guide to configure a network so System A can ping two other systems in a custom topology.
+                    </div>
+                </div>
+                <!-- Existing blogs ... -->
+                <div class="blog-item">
+                    <div class="blog-tags">
+                        <span class="blog-tag">DevOps</span>
+                        <span class="blog-tag">Ansible</span>
+                        <span class="blog-tag">Automation</span>
+                    </div>
+                    <a href="https://mihirpost.medium.com/create-a-dynamic-ansible-playbook-for-deploying-a-webpage-in-any-type-of-os-63cb937662c3" target="_blank" class="blog-title">
+                        Create a Dynamic Ansible Playbook for Deploying a Webpage in Any Type of OS
+                    </a>
+                    <div class="blog-desc">
+                        A step-by-step guide to building a flexible Ansible playbook for deploying web pages on any OS.
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="blog-tags">
+                        <span class="blog-tag">DevOps</span>
+                        <span class="blog-tag">Ansible</span>
+                        <span class="blog-tag">HAProxy</span>
+                    </div>
+                    <a href="https://mihirpost.medium.com/create-another-ansible-role-myloadbalancer-to-configure-haproxy-lb-83be4beb8e2c" target="_blank" class="blog-title">
+                        Create Another Ansible Role "myloadbalancer" to Configure HAProxy LB
+                    </a>
+                    <div class="blog-desc">
+                        Learn how to create a reusable Ansible role for configuring HAProxy as a load balancer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -852,7 +1066,7 @@
         <div class="container">
             <div class="contact-content">
                 <div class="section-title">
-                    <h2 style="color: white;">Let's Connect</h2>
+                    <h2>Let's Connect</h2>
                     <p style="color: rgba(255, 255, 255, 0.8);">Ready to discuss your next DevOps project or infrastructure challenge</p>
                 </div>
                 <div class="contact-info">
@@ -889,6 +1103,28 @@
             }
         });
 
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+                navToggle.classList.toggle('open');
+                // Change icon
+                navToggle.innerHTML = navLinks.classList.contains('show')
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
+            // Optional: Hide menu on link click (mobile)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('show');
+                    navToggle.classList.remove('open');
+                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
         // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
         window.addEventListener('scroll', function() {
@@ -900,11 +1136,8 @@
         });
 
         scrollTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]
+    </script>
+</body>
+</html>
