@@ -770,7 +770,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -967,7 +967,7 @@
     <section id="experience">
         <div class="container">
             <div class="section-title">
-                <h2>Work Experience</h2>
+                <h2>Professional Experience</h2>
                 <p>Delivering scalable infrastructure solutions across diverse industries</p>
             </div>
             <div class="experience-timeline">
@@ -975,14 +975,16 @@
                     <div class="experience-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="experience-content">
-                        <h3>DevOps Engineer</h3>
-                        <div class="company">Simform Pvt. Ltd.</div>
-                        <div class="duration">April 2022 – Present | Ahmedabad, India</div>
-                        
+                    <div class="experience-content" style="box-shadow: 0 12px 36px rgba(102,126,234,0.13); border: 2px solid var(--primary); background: linear-gradient(120deg, #f8fafc 80%, #e9e4f0 100%);">
+                        <h3 style="font-size:1.6rem; color: var(--secondary); margin-bottom: 0.7rem;">
+                            DevOps Engineer
+                        </h3>
+                        <div style="color:#888; font-size:1.05rem; margin-bottom:1.2rem;">
+                            <i class="fas fa-calendar-alt"></i> April 2022 – Present
+                        </div>
                         <div class="project-list">
-                            <div class="project-item">
-                                <h4>Blockchain Ecosystem</h4>
+                            <div class="project-item" style="background:rgba(102,126,234,0.09); border-left:5px solid var(--secondary);">
+                                <h4 style="color:var(--secondary);">Blockchain Ecosystem</h4>
                                 <ul class="project-achievements">
                                     <li>Architected and deployed 10+ core blockchain projects from scratch using Terraform</li>
                                     <li>Migrated applications from EC2 to ECS, enhancing scalability and performance</li>
@@ -993,9 +995,8 @@
                                     <li>Established multi-layered security framework using CrowdStrike and Snyk</li>
                                 </ul>
                             </div>
-                            
-                            <div class="project-item">
-                                <h4>Real Estate Platform</h4>
+                            <div class="project-item" style="background:rgba(102,126,234,0.09); border-left:5px solid var(--secondary);">
+                                <h4 style="color:var(--secondary);">Real Estate Platform</h4>
                                 <ul class="project-achievements">
                                     <li>Provisioned full application infrastructure using CloudFormation</li>
                                     <li>Deployed and managed ECS Fargate clusters for improved scalability</li>
@@ -1003,9 +1004,8 @@
                                     <li>Automated deployment processes reducing deployment time by 30%</li>
                                 </ul>
                             </div>
-                            
-                            <div class="project-item">
-                                <h4>Real-time Auction System</h4>
+                            <div class="project-item" style="background:rgba(102,126,234,0.09); border-left:5px solid var(--secondary);">
+                                <h4 style="color:var(--secondary);">Real-time Auction System</h4>
                                 <ul class="project-achievements">
                                     <li>Managed Kubernetes infrastructure for real-time auction platform</li>
                                     <li>Implemented KEDA-based pod autoscaling for NGINX ingress controllers</li>
@@ -1022,30 +1022,14 @@
     </section>
 
     <!-- Education & Certifications -->
-    <section id="education">
+    <section id="certificates">
         <div class="container">
             <div class="section-title">
-                <h2>Education & Certifications</h2>
-                <p>Strong academic foundation and industry-recognized certifications</p>
+                <h2>Certifications</h2>
+                <p>Industry-recognized certifications</p>
             </div>
-            <div class="edu-cert-grid">
-                <div class="edu-cert-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="edu-item">
-                        <h4>B.E. Information Technology</h4>
-                        <div class="school">Vishwakarma Government Engineering College</div>
-                        <div class="duration">Aug 2018 – May 2022</div>
-                        <div class="grade">CGPA: 8.7</div>
-                    </div>
-                    <div class="edu-item">
-                        <h4>Higher Secondary - Class XII</h4>
-                        <div class="school">Sahjanand Vidyalaya</div>
-                        <div class="duration">Jun 2016 – May 2018</div>
-                        <div class="grade">Percentage: 87%</div>
-                    </div>
-                </div>
-                
-                <div class="edu-cert-card">
+            <div class="edu-cert-grid" style="justify-content:center; display:flex;">
+                <div class="edu-cert-card" style="margin:0 auto; min-width:320px; max-width:400px;">
                     <h3><i class="fas fa-certificate"></i> Certifications</h3>
                     <div class="cert-item">
                         <h4>AWS Certified Solution Architect Associate</h4>
@@ -1091,6 +1075,11 @@
     <button class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding:0.5rem 0; background: #f8fafc; color: #888; font-size:1rem;">
+        © 2022 Mihir Patel. All rights reserved
+    </footer>
 
     <script>
         // Navbar scroll effect
